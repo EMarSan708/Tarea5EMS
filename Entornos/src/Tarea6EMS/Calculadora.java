@@ -7,14 +7,15 @@ package Tarea6EMS;
  * @author Juan Simón
  *
  */
-public class EMS_calculadora {
+public class Calculadora {
 	
-	public EMS_calculadora(){
+	public Calculadora(){
         
     }
     
     public int suma(int num1,int num2){
         return num1+num2;
+        
     }
     
     public int resta(int num1,int num2){
