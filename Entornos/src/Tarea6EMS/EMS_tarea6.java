@@ -5,51 +5,6 @@ import java.util.Scanner;
 
 
 
-class SelectionSort {
-	public void sortArray(int[] array) {
-		for (int i = array.length - 1; i > 0; i--) {
-			int maxValue = 0;
-			for (int j = 0; j < i; j++) {
-				if (array[j + 1] > array[maxValue]) {
-					maxValue = j + 1;
-				}
-			}
-			swap(array, i, maxValue);
-			printArray(array);
-		}
-	}
-	
-	public int[] sortArray2(int[] numbers) {
-		for (int i=0; i < numbers.length - 1;i++) {
-			for (int j=i+1;j<numbers.length;j++) {
-				if (numbers[i]>numbers[j]) {
-					int auxiliar=numbers[i];
-					numbers[i]=numbers[j];
-					numbers[j]=auxiliar;
-				}
-			}
-		}
-		return numbers;
-	}
-
-	public void printArray(int[] array) {
-		for (int i = 0; i < array.length; i++) {
-			System.out.printf("%d \t", array[i]);
-		}
-		System.out.println();
-	}
-
-	public void swap(int[] array, int a, int b) {
-		int value = array[b];
-		array[b] = array[a];
-		array[a] = value;
-	}
-}
-
-
-
-
-
 public class EMS_tarea6 {
       
 
@@ -57,18 +12,18 @@ public class EMS_tarea6 {
     public static void main(String[] args) {
     	
 
-    		SelectionSort selectionSort = new SelectionSort();
+    		Ordenacion selectionSort = new Ordenacion();
 		int[] array1 = { 10, 1, 5, 40, 12, 34, 44, 12, 11, 9 };
-		selectionSort.printArray(array1);
-		selectionSort.sortArray(array1);
-		selectionSort.printArray(array1);
+		selectionSort.imprimirMatriz(array1);
+		selectionSort.ordenarMatriz(array1);
+		selectionSort.imprimirMatriz(array1);
 		System.out.println();
 		
 		int[] array2 = { 3, 1, 23, 18, 41, 4, 44, 7, 16, 2 };
 		int[] array3;
-		selectionSort.printArray(array2);
-		array3=selectionSort.sortArray2(array2);
-		selectionSort.printArray(array3);
+		selectionSort.imprimirMatriz(array2);
+		array3=selectionSort.ordenarMatriz2(array2);
+		selectionSort.imprimirMatriz(array3);
     }
     
     public static int ej1(int a, int b, int c){
@@ -98,11 +53,11 @@ public class EMS_tarea6 {
         }
     } 
      
-    public static void ej4(int x){
-        if(x<16){
+    public static void ej4(int edad){
+        if(edad<16){
             System.out.println("Eres demasiado pequeño para conducir y beber");
         }
-        else if(x<21){
+        else if(edad<21){
             System.out.println("Puedes conducir pero no beber");
         }
         else{
